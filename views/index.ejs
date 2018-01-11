@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fancy drink</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="js/einblendenausblenden.js"></script>
+	
+
+
+
+
+
+
+  </head>
+  <body>
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 text-center"><img src="img/header2.png"></div>
+
+
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6"><h2 class="text-center untertitel">option select</h2></div>
+				<div class="col-md-6">
+					<div class="haupt row">
+						<p class="text-center">please select some data you want to review:</p>
+						<div class="col-md-4">
+							<div class="dropdown text-center">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Unternehmen
+								<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu ausrichtung" aria-labelledby="dropdownMenu1">
+								<li><a href="#" onclick="einblendenP()">Gesamtumsatz</a></li>
+								<li><a href="#" onclick="einblendenP()">Auftraege pro Zeiteinheit</a></li>
+								<li><a href="#" onclick="einblendenP()">Beliebte Kombinationen</a></li>
+								<li><a href="#" onclick="saftsorten()">Saftsorten</a></li>
+								<li><a href="#" onclick="stuecke()">Stueckesorten</a></li>
+								<li><a href="#" onclick="puree()">Pureesorten</a></li>
+								<li><a href="#" onclick="einblendenP()">Arbeitsplatzanzahl</a></li>
+								<li><a href="#" onclick="einblendenP()">Dauer der Arbeitsschritte</a></li>
+								<li><a href="#" onclick="einblendenP()">Lagerentnahme</a></li>
+
+
+							  </ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="dropdown text-center">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Arbeitsplatz
+								<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu ausrichtung" aria-labelledby="dropdownMenu1">
+								<li><a href="#" onclick="einblendenP()">Dauer pro Auftrag</a></li>
+								<li><a href="#" onclick="einblendenP()">Abfuellgewichte</a></li>
+								<li><a href="#" onclick="einblendenP()">Lagerentnahme</a></li>
+								<li><a href="#" onclick="einblendenP()">Wartezeit zwischen Auftraegen</a></li>
+
+
+							  </ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="dropdown text-center">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Kunde
+								<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu ausrichtung" aria-labelledby="dropdownMenu1">
+								<li><a href="#" onclick="einblendenP()">Neukunde/Bestandskunde</a></li>
+								<li><a href="#" onclick="einblendenP()">Umsatz pro Kunde</a></li>
+								<li><a href="#" onclick="einblendenP()">Entwicklung der Kundenzufriedenheit</a></li>
+								<li><a href="#" onclick="einblendenP()">Bestelldauer pro Kunde</a></li>
+								<li><a href="#" onclick="einblendenP()">Retoure von Drinks</a></li>
+
+
+
+							  </ul>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<section class="container-fluid">
+		<div class="container" id="tabelle1">
+		<p class="diagrammtxt">Juice</p>
+			<canvas id="myChart1">
+				<script src="js/Chart.bundle.min.js"></script>
+				<script> var ctx = document.getElementById("myChart1").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["total amount of drinks", "Orangejuice", "Appeljuice", "Bananajuice", "Cherryjuice", "Currantjuice","Grapejuice","Tomatojuice"],
+        datasets: [{
+            label: '',
+            data: [<%= JuiceG %>, <%= Juice1 %>, <%= Juice2 %>, <%= Juice3 %>, <%= Juice4 %>, <%= Juice5 %>, <%= Juice6 %>, <%= Juice7 %>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});</script>
+			</canvas>
+		</div>
+	</section>
+	
+		<section class="container-fluid">
+		<div class="container" id="tabelle2">
+		<p class="diagrammtxt">Pieces</p>
+			<canvas id="myChart2">
+				<script src="js/Chart.bundle.min.js"></script>
+				<script>var ctx = document.getElementById("myChart2").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["total amount of drinks", "Bananapieces", "Blueberries", "Mangopieces", "Pineapplepieces", "Raspberries", "Strawberrypieces"],
+        datasets: [{
+            label: '',
+            data: [<%= PiecesG %>, <%= Pieces1 %>, <%= Pieces2 %>, <%= Pieces3 %>, <%= Pieces4 %>, <%= Pieces5 %>, <%= Pieces6 %>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});</script>
+			</canvas>
+		</div>
+	</section>
+	
+	<section class="container-fluid">
+		<div class="container" id="tabelle3">
+		<p class="diagrammtxt">Puree</p>
+			<canvas id="myChart3">
+				<script src="js/Chart.bundle.min.js"></script>
+				<script>var ctx = document.getElementById("myChart3").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["total amount of drinks", "Currantpuree", "Kiwipuree", "Mangopuree", "Peachpuree", "Pearpuree", "Strawberrypuree"],
+        datasets: [{
+            label: '',
+            data: [<%= PureeG %>, <%= Puree1 %>, <%= Puree2 %>, <%= Puree3 %>, <%= Puree4 %>, <%= Puree5 %>, <%= Puree6 %>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});</script>
+			</canvas>
+		</div>	
+	</section>
+    
+	<section class="container-fluid">
+		<div class="container" id="tabelleP">
+			<canvas id="myChartP">
+				<script src="js/Chart.bundle.min.js"></script>
+				<script src="js/scriptP.js"></script>
+			</canvas>
+		</div>
+	</section>
+	
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>

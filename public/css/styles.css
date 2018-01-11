@@ -1,0 +1,46 @@
+.untertitel{
+	color: #888;
+}
+
+.haupt{
+	max-width: 600px;
+	margin-top: 15px;
+	background-color: #ddd;
+	padding-bottom:15px;
+}
+
+.ausrichtung{
+	margin: 0 auto;
+	left:50%;
+	text-align:center;
+	transform: translate(-50%, 0);
+}
+
+.diagrammtxt{
+	font-size:20px;
+	padding-left:47%
+}
+
+#tabelle1{
+	margin-top:50px;
+	width:1110px;
+	display:none;
+}
+
+#tabelle2{
+	margin-top:50px;
+	width:1110px;
+	display:none;
+}
+
+#tabelle3{
+	margin-top:50px;
+	width:1110px;
+	display:none;
+}
+
+#tabelleP{
+	margin-top:50px;
+	width:1110px;
+	display:none;
+}

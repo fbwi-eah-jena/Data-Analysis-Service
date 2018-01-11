@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap-3.3.5-dist",
+  "version": "1.0.0",
+  "description": "ITProject",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "Robert",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.7"
+  }
+}
