@@ -1,14 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser')
 const app = express();
 var conf = require('./config.json');
 var write = require('./public/js/write');
-var db
-var result
 const path = require('path')
 const MongoClient = require('mongodb').MongoClient;
 var uri = "mongodb://pRobert:422114328@itprojekt-shard-00-00-z69ww.mongodb.net:27017,itprojekt-shard-00-01-z69ww.mongodb.net:27017,itprojekt-shard-00-02-z69ww.mongodb.net:27017/test?ssl=true&replicaSet=ITProjekt-shard-0&authSource=admin";
 
+//connect to the mongodb and setting up the node.js server
 MongoClient.connect(uri, function(err, database) {
   if (err) throw err;
   db = database
@@ -32,11 +30,12 @@ mqttClient.on('message', function (topic, message){
 	write.print(topic,message)	
 });
 
-app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')));
 
+//writing commands for the server here
 app.get('/', (req, res) => {
+//find (all entries) in the collection "fancydrink" and count them
 db.collection("fancydrink").find({}).count(function(err, result) {
 	if (err) throw err;
 	//console.log(result);
@@ -44,7 +43,7 @@ db.collection("fancydrink").find({}).count(function(err, result) {
 	var JuiceG = result;
 	console.log(JuiceG + " total amount of drinks");
 
-	  
+			//find all entries, who got the entry "FruitJuice: 1", in the collection "fancydrink" and count them
 			db.collection("fancydrink").find({FruitJuice: "1"}).count(function(err, result) {
 			if (err) throw err;
 			//console.log(result);
@@ -214,7 +213,7 @@ db.collection("fancydrink").find({}).count(function(err, result) {
 													var Puree6 = result;
 													console.log(Puree6 +" Strawberrypuree");
 														
-
+															//get the server to render the index.ejs and include the variables who should be usable in the index.ejs
 															res.render('index.ejs', {Puree1, Puree2, Puree3, Puree4, Puree5, Puree6, PureeG, Juice1, Juice2, Juice3, Juice4, Juice5, Juice6, Juice7, JuiceG, Pieces1, Pieces2, Pieces3, Pieces4, Pieces5, Pieces6, PiecesG })
 														
 });});});});});});});});});});});});});});});});});});});});});});

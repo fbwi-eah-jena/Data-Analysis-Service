@@ -34,19 +34,19 @@
 						<div class="col-md-4">
 							<div class="dropdown text-center">
 							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								Unternehmen
+								Company
 								<span class="caret"></span>
 							  </button>
 							  <ul class="dropdown-menu ausrichtung" aria-labelledby="dropdownMenu1">
-								<li><a href="#" onclick="einblendenP()">Gesamtumsatz</a></li>
-								<li><a href="#" onclick="einblendenP()">Auftraege pro Zeiteinheit</a></li>
-								<li><a href="#" onclick="einblendenP()">Beliebte Kombinationen</a></li>
-								<li><a href="#" onclick="saftsorten()">Saftsorten</a></li>
-								<li><a href="#" onclick="stuecke()">Stueckesorten</a></li>
-								<li><a href="#" onclick="puree()">Pureesorten</a></li>
-								<li><a href="#" onclick="einblendenP()">Arbeitsplatzanzahl</a></li>
-								<li><a href="#" onclick="einblendenP()">Dauer der Arbeitsschritte</a></li>
-								<li><a href="#" onclick="einblendenP()">Lagerentnahme</a></li>
+								<li><a href="#" onclick="einblendenP()">total sales</a></li>
+								<li><a href="#" onclick="einblendenP()">number of orders (per time unit)</a></li>
+								<li><a href="#" onclick="einblendenP()">quantity of Sales</a></li>
+								<li><a href="#" style="color:red" onclick="saftsorten()">Juices</a></li>
+								<li><a href="#" style="color:red" onclick="stuecke()">Pieces</a></li>
+								<li><a href="#" style="color:red" onclick="puree()">Puree</a></li>
+								<li><a href="#" onclick="einblendenP()">dispatch time</a></li>
+								<li><a href="#" onclick="einblendenP()">amount of stock removals</a></li>
+								
 
 
 							  </ul>
@@ -55,14 +55,14 @@
 						<div class="col-md-4">
 							<div class="dropdown text-center">
 							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								Arbeitsplatz
+								Workplace
 								<span class="caret"></span>
 							  </button>
 							  <ul class="dropdown-menu ausrichtung" aria-labelledby="dropdownMenu1">
-								<li><a href="#" onclick="einblendenP()">Dauer pro Auftrag</a></li>
-								<li><a href="#" onclick="einblendenP()">Abfuellgewichte</a></li>
-								<li><a href="#" onclick="einblendenP()">Lagerentnahme</a></li>
-								<li><a href="#" onclick="einblendenP()">Wartezeit zwischen Auftraegen</a></li>
+								<li><a href="#" onclick="einblendenP()">amount of time per order</a></li>
+								<li><a href="#" onclick="einblendenP()">weight per drink</a></li>
+								<li><a href="#" onclick="einblendenP()">stock removal per workplace</a></li>
+								<li><a href="#" onclick="einblendenP()">time between orders</a></li>
 
 
 							  </ul>
@@ -71,15 +71,15 @@
 						<div class="col-md-4">
 							<div class="dropdown text-center">
 							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								Kunde
+								Customer
 								<span class="caret"></span>
 							  </button>
 							  <ul class="dropdown-menu ausrichtung" aria-labelledby="dropdownMenu1">
-								<li><a href="#" onclick="einblendenP()">Neukunde/Bestandskunde</a></li>
-								<li><a href="#" onclick="einblendenP()">Umsatz pro Kunde</a></li>
-								<li><a href="#" onclick="einblendenP()">Entwicklung der Kundenzufriedenheit</a></li>
-								<li><a href="#" onclick="einblendenP()">Bestelldauer pro Kunde</a></li>
-								<li><a href="#" onclick="einblendenP()">Retoure von Drinks</a></li>
+								<li><a href="#" onclick="einblendenP()">sales per customer/order</a></li>
+								<li><a href="#" onclick="einblendenP()">average amount of orders per customer</a></li>
+								<li><a href="#" onclick="einblendenP()">development of customer satisfaction</a></li>
+								<li><a href="#" onclick="einblendenP()">orderduration per customer</a></li>
+								<li><a href="#" onclick="einblendenP()">proportion of returned orders</a></li>
 
 
 
@@ -96,7 +96,7 @@
 
 	<section class="container-fluid">
 		<div class="container" id="tabelle1">
-		<p class="diagrammtxt">Juice</p>
+		<p class="diagrammtxt">Juices</p>
 			<canvas id="myChart1">
 				<script src="js/Chart.bundle.min.js"></script>
 				<script> var ctx = document.getElementById("myChart1").getContext('2d');
